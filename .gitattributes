@@ -1,0 +1,2 @@
+data/twitterConfig.json filter=git-crypt diff=git-crypt
+data/wordnikConfig.json filter=git-crypt diff=git-crypt
