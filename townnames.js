@@ -56,17 +56,19 @@ let tweet = async function () {
 };
 
 async function generateTownName() {
-  let suffixAmount = randomInt(1, 2);
-  let preSuffixAmount = randomInt(0, 1);
+  let hasSecondSuffix = !randomInt(0, 5);
+  let hasPreSuffix = !randomInt(0, 2);
   let hasPostSuffix = !randomInt(0, 50);
 
   let townName = await getWord();
 
-  for(let i = 0; i < preSuffixAmount; ++i) {
+  if(hasPreSuffix) {
     townName += randomItem(preSuffixes)
   }
 
-  for(let i = 0; i < suffixAmount; ++i) {
+  townName += randomItem(suffixes);
+
+  if(hasSecondSuffix) {
     townName += randomItem(suffixes);
   }
 
@@ -79,7 +81,7 @@ async function generateTownName() {
 
 async function getWord() {
   let response = await
-      axios.get('http://api.wordnik.com/v4/words.json/randomWord?includePartOfSpeech=noun&api_key=' + wordnikConfig.apiKey);
+      axios.get('http://api.wordnik.com/v4/words.json/randomWord?includePartOfSpeech=noun,adjective&api_key=' + wordnikConfig.apiKey);
   return response.data.word;
 }
 
