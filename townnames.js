@@ -31,6 +31,7 @@ const suffixes = [
 
 const preSuffixes = [
   'er',
+  'bridge',
   'ings'
 ];
 
