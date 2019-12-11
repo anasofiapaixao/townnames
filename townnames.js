@@ -36,7 +36,8 @@ const preSuffixes = [
 ];
 
 const postSuffixes = [
-  ' in the Beans'
+  ' in the Beans',
+  ' Hill'
 ];
 
 
@@ -59,7 +60,7 @@ let tweet = async function () {
 async function generateTownName() {
   let hasSecondSuffix = !randomInt(0, 5);
   let hasPreSuffix = !randomInt(0, 2);
-  let hasPostSuffix = !randomInt(0, 50);
+  let hasPostSuffix = !randomInt(0, 30);
 
   let townName = await getWord();
 
