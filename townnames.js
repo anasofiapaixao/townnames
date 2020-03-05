@@ -63,6 +63,7 @@ async function generateTownName() {
   let hasPostSuffix = !randomInt(0, 30);
 
   let townName = await getWord();
+  townName = townName.slice(0, randomInt(4,8));
 
   if(hasPreSuffix) {
     townName += randomItem(preSuffixes)
