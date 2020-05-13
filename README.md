@@ -26,3 +26,5 @@ If you're not future Sofia, here's the format of both:
 
 ```
 
+twitterConfig is formatted with `snake_case` so the object can be plugged straight in Twit initialization. 
+
